@@ -42,7 +42,7 @@ and o.voided = '0' \
 and o.concept_id = '15' AND o.value_coded in ('5501', '5505', '4863', '5499', '5500', '4640', '6929', '5487', '5496', '4163', '4653','5486','5510','5498')  \
  \
 where p.voided = '0' \
-and date(o.obs_datetime) between DATE_SUB(CURDATE(),INTERVAL 7 DAY) AND CURDATE() \
+and date(o.obs_datetime) between DATE_SUB(CURDATE(),INTERVAL 7 DAY) AND DATE_SUB(CURDATE(),INTERVAL 1 DAY) \
 group by IP, Name, age, gender, VDC, Ward, District, diag \
 ORDER BY date_diagnosed ASC"
 
