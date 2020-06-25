@@ -1,6 +1,7 @@
 import mysql.connector
 import csv 
 
+header = ['IP', 'Name', 'age','Gender','VDC','date_diagnosed','Ward','District','Diag']
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -50,4 +51,5 @@ mycursor.execute(sql)
 myresult = mycursor.fetchall()
 c = csv.writer(open('/home/race/edcd.csv', 'w'))
 for x in myresult:
+    c.writerow(header)
     c.writerow(x)
