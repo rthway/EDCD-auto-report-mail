@@ -49,7 +49,7 @@ ORDER BY date_diagnosed ASC"
 mycursor.execute(sql)
 
 myresult = mycursor.fetchall()
-c = csv.writer(open('/home/race/edcd.csv', 'w'))
+c = csv.writer(open('edcd.csv', 'w'))
 c.writerow(header)
 for x in myresult:
     c.writerow(x)
